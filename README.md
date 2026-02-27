@@ -1,1 +1,9 @@
-# Regex to DFA ConverterThis project implements the process of converting a Regular Expression into a Deterministic Finite Automaton (DFA). This is a core concept in formal language theory and compiler design.## FeaturesRegex Parsing: Supports basic operators like union (|), concatenation, and Kleene star (*).NFA Construction: Uses Thompson's Construction to create a Non-deterministic Finite Automaton.DFA Conversion: Implements the Powerset Construction (Subset Construction) algorithm.Visualization: (Optional) Generates a visual graph of the resulting automaton.## How it WorksThe transformation follows a standard pipeline:Regex $\rightarrow$ Postfix: Converts the expression to postfix notation for easier parsing.Postfix $\rightarrow$ NFA: Builds an NFA using Thompson's algorithm.NFA $\rightarrow$ DFA: Converts the NFA to a DFA by finding epsilon-closures and transition sets.
+🚀 From Logic to Machine: The Regex-to-DFA Journey
+Have you ever wondered how a simple string like (a|b)*abb actually gets "understood" by a computer? It’s not magic—it’s a beautiful pipeline of mathematical transformations!
+
+This project is my personal deep-dive into the world of Formal Languages. I've built a converter that takes a "human-readable" Regular Expression and transforms it into a hyper-efficient Deterministic Finite Automaton (DFA).
+
+🎢 The Pipeline (How it works)Think of this as a factory assembly line:
+The Blueprint (Regex → Postfix): We turn the expression inside out using the Shunting-yard algorithm so the computer knows exactly what operation to do first.
+The Skeleton (Postfix → NFA): Using Thompson's rules, we create a "fuzzy" machine that can be in multiple places at once (Epsilon transitions! 👻).
+The Final Form (NFA → DFA): We calculate $\epsilon$-closures to remove the "fuzziness," resulting in a lean, mean, string-matching machine.
