@@ -1,9 +1,29 @@
-🚀 From Logic to Machine: The Regex-to-DFA Journey
-Have you ever wondered how a simple string like (a|b)*abb actually gets "understood" by a computer? It’s not magic—it’s a beautiful pipeline of mathematical transformations!
+Regex to DFA Converter
+A console application developed in C# that parses Regular Expressions (Regex) and converts them step-by-step into Deterministic Finite Automata (DFA).
 
-This project is my personal deep-dive into the world of Formal Languages. I've built a converter that takes a "human-readable" Regular Expression and transforms it into a hyper-efficient Deterministic Finite Automaton (DFA).
+🚀 Main Features
+Syntax Tree Construction: Uses a SyntaxTree data structure to parse the grammar and operator precedence of the regular expression.
 
-🎢 The Pipeline (How it works)Think of this as a factory assembly line:
-The Blueprint (Regex → Postfix): We turn the expression inside out using the Shunting-yard algorithm so the computer knows exactly what operation to do first.
-The Skeleton (Postfix → NFA): Using Thompson's rules, we create a "fuzzy" machine that can be in multiple places at once (Epsilon transitions! 👻).
-The Final Form (NFA → DFA): We calculate $\epsilon$-closures to remove the "fuzziness," resulting in a lean, mean, string-matching machine.
+Step-by-Step Conversion: Processes the expression through a Non-Deterministic Finite Automaton (NonDeterministicFiniteAutomaton) phase to reach the final, minimized Deterministic Finite Automaton (DeterministicFiniteAutomaton).
+
+Automated Engine: The core conversion logic is efficiently encapsulated within the RegexToDFA class.
+
+File Processing: Automatically reads input regular expressions from an input.txt file for rapid testing.
+
+📁 Project Structure
+The code is organized using solid Object-Oriented Programming (OOP) principles:
+
+Automata Models: DeterministicFiniteAutomaton.cs and NonDeterministicFiniteAutomaton.cs (define states, transitions, and alphabets).
+
+Syntax Analysis: SyntaxTree.cs (evaluates and breaks down the expression).
+
+Conversion Engine: RegexToDFA.cs (links the components together and executes the algorithm).
+
+Entry Point: Program.cs (runs the application and outputs the results to the console).
+
+🛠️ Required Dependencies
+To compile and run this project, you will need:
+
+.NET SDK / .NET Framework installed on your system.
+
+A C# compatible IDE, such as Visual Studio or JetBrains Rider (to open and build the .csproj project file).
